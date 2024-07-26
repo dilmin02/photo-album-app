@@ -28,11 +28,199 @@
   color: #61dafb;
 }
 
+.main {
+  background-color: #ad9898;
+  background-image: url('../images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Styles for the title */
+.title {
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 20px;
+  color: rgb(0, 0, 0)
+}
+
+.stats {
+  display: flex;
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center items horizontally */
+  list-style-type: none; /* Remove list bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+/* Flex container for the users */
+.users-list {
+  display: flex;
+  flex-wrap: wrap; /* Wrap to next line if necessary */
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center items horizontally */
+  list-style-type: none; /* Remove list bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+/* Flex item for each user */
+.users-list li {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.users-list a {
+  text-decoration: none;
+  color: #333;
+}
+
+.users-list li:hover {
+  background-color: orange; /* Change to orange on hover */
+}
+
+.users-list a:hover {
+  text-decoration: underline;
+}
+
+.list {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+/* Grid container for the albums list */
+.users-list-two.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+/* Grid item for each album */
+.users-list-two.list li {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.users-list-two.list li:hover {
+  background-color: #ffeb3b;
+  transform: translateY(-5px);
+}
+
+.users-list-two.list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.users-list-two.list a:hover {
+  color: #ff9800;
+}
+
+.m {
+  margin: 5% !important;
+}
+
+/* -----ALBUM PHOTOS PAGE---------------------------------------------------------- */
+
+/* Container for the album photos */
+
+h2 {
+  margin: 0 !important;
+}
+
+/* Title */
+.album-title {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  background-color: black;
+  /* background-image: url('../images/background.jpg');
+  background-size: cover; */
+  padding: 50px;
+}
+
+/* Photo list styles */
+.photo-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 5 items per row */
+  gap: 16px; /* Space between grid items */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Individual photo item */
+.photo-item {
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.photo-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Photo image */
+.photo-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Photo title */
+.photo-title {
+  padding: 10px;
+  margin: 0;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* -----ALBUM PHOTOS PAGE---------------------------------------------------------- */
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .users-list {
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Adjust space between items */
+  }
+
+  .title {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .users-list li {
+    padding: 8px; /* Adjust padding for smaller screens */
+    width: 100%; /* Make items take full width */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+
+  .photo-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 5 items per row */
   }
 }
